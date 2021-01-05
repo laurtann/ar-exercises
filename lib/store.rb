@@ -8,8 +8,7 @@ class Store < ActiveRecord::Base
 
   def must_carry_men_or_womens
     if !mens_apparel && !womens_apparel
-      errors.add(:womens_apparel, ": Store must carry at least one of men's or women's styles")
-      errors.add(:mens_apparel, ": Store must carry at least one of men's or women's styles")
+      errors.add(:base, :invalid, message: "Store must carry at least one of men's or women's styles")
     end
   end
 
